@@ -1,0 +1,42 @@
+<div class="container">
+  <h1 class="mat-dialog-title">Add New Book</h1>
+  <mat-dialog-content>
+    <form>
+      <mat-form-field >
+        <mat-label>Book Name </mat-label>
+        <input matInput type="text" [(ngModel)]="name" name="k" required/>
+      </mat-form-field><br>
+      <mat-form-field >
+        <mat-label>Author Name </mat-label>
+        <input matInput type="text" [(ngModel)]="author" name="k" required/>
+      </mat-form-field><br>
+      <mat-form-field >
+        <mat-label>Genre </mat-label>
+        <input matInput type="text" [(ngModel)]="category" name="k" />
+      </mat-form-field><br>
+      <mat-form-field >
+        <mat-label>Pages </mat-label>
+        <input matInput type="number" [(ngModel)]="pages" name="k" required/>
+      </mat-form-field><br>
+      <mat-form-field >
+        <mat-label>Pages read </mat-label>
+        <input matInput type="number" [(ngModel)]="pagesRead" name="k" value="0"/>
+      </mat-form-field><br>
+      <mat-form-field >
+        <mat-label>Rating </mat-label>
+        <input matInput type="number" [(ngModel)]="rating" name="k" value="0" />
+      </mat-form-field><br>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions class="justify-content-end">
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button
+      mat-raised-button
+      color="primary"
+      cdkFocusInitial
+      (click)="onSubmit()"
+    >
+      Add
+    </button>
+  </mat-dialog-actions>
+</div>

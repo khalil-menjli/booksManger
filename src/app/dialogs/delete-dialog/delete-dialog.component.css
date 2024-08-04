@@ -1,0 +1,14 @@
+h1 {
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    
+}
+mat-dialog-actions {
+    padding: 10px;
+    margin-top: 5px;
+}
+.contanier {
+    height: 170px;
+    overflow: visible;
+}

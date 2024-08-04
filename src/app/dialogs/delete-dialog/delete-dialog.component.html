@@ -1,0 +1,10 @@
+<!-- delete-dialog.component.html -->
+<div class="contanier">
+<mat-dialog-content>
+    <h1>Are you sure you want to delete <b>{{ book.name }} </b>?</h1>
+  </mat-dialog-content>
+  <mat-dialog-actions  class="justify-content-center">
+    <button mat-raised-button (click)="onCancel()">Cancel</button>
+    <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+  </mat-dialog-actions>
+</div>

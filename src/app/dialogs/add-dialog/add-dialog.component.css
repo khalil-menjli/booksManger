@@ -1,0 +1,13 @@
+mat-dialog-content {
+    min-height: 500px;
+    overflow: visible;
+}
+input ,mat-form-field {
+    width: 100%;  
+}
+h1 {
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    
+}

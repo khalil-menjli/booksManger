@@ -1,0 +1,68 @@
+<div class="container-md">
+  <div class="d-flex justify-content-between">
+    <h2><b>Books Table</b></h2>
+    <button
+      (click)="openDialog(dialogComponent[0])"
+      mat-raised-button
+      color="primary"
+    >
+      Add book
+    </button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Author Name</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Page</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of allBooks">
+        <td scope="row">{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.auther }}</td>
+        <td>{{ p.category }}</td>
+        <td class="position-relative">
+          <div class="progress" style="height: 20px" matTooltip= " Page {{p.pages}} ">
+            <div
+              style="background-color: #0f4c75"
+              class="progress-bar progress-bar-animated progress-bar-striped"
+              role="progressbar"
+              [style.width.%]="(p.pagesRead / p.pages) * 100"
+              [attr.aria-valuenow]="p.pages"
+              [attr.aria-valuemin]="0"
+              [attr.aria-valuemax]="p.pagesRead"
+            >
+              {{ (p.pagesRead / p.pages) * 100 | number : "1.0-0" }}%
+            </div>
+          </div>
+          
+        </td>
+        <td>{{ p.rating }}/10</td>
+
+        <td class="d-flex justify-content-center">
+          <mat-icon
+          matTooltip= "Edit {{p.name}} "
+            (click)="openDialog(dialogComponent[1], p.id)"
+            aria-hidden="false"
+            aria-label="Edit"
+            style="color: #0f4c75"
+          >edit</mat-icon>&nbsp;
+      
+          <mat-icon
+          matTooltip= "Delete {{p.name}} "
+            (click)="openDialog(dialogComponent[2], p.id)"
+            aria-hidden="false"
+            aria-label="Delete"
+            style="color: red"
+          >delete</mat-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
